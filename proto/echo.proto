@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package echoservice;
+
+option go_package = "github.com/fsaintjacques/echo/proto/gen/echoservice";
+
+service EchoService {
+    rpc Echo(Request) returns (stream Response);
+}
+
+message Request {}
+
+message Response {
+    // Some random data
+    bytes payload = 1;
+}
